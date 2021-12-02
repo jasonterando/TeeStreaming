@@ -1,6 +1,9 @@
 namespace TeeStreaming;
 
+using System;
 using System.Buffers;
+using System.IO;
+using System.Threading;
 
 /// <summary>
 /// This class is a ring-buffer of fixed capacity, it DOES NOT auto-expand.
@@ -10,7 +13,6 @@ using System.Buffers;
 public class RingBuffer : IDisposable
 {
     protected internal Mutex _mutex = new Mutex();
-    // protected internal SemaphoreLocker _locker;
     protected internal byte[] _buffer;
     protected internal int _capacity;
     protected internal int _available;

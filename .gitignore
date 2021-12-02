@@ -1,4 +1,5 @@
 src/bin
 src/obj
+src/pkg
 test/.results/log
 test/.results/reports

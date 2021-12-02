@@ -1,8 +1,8 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <PackageId>TeeStream</PackageId>
-    <Version>0.1.0</Version>
+    <PackageId>TeeStreaming</PackageId>
+    <Version>0.1.1</Version>
     <Authors>Jason Terando</Authors>
     <Company>Jason Terando</Company>
     <PackageReadmeFile>README.md</PackageReadmeFile>
