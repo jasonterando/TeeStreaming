@@ -1,0 +1,4 @@
+src/bin
+src/obj
+test/.results/log
+test/.results/reports
