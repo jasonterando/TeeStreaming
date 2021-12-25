@@ -164,38 +164,6 @@ public class TeeStream : Stream
                 ArrayPool<byte>.Shared.Return(holdBufferB);
             }
         }).ConfigureAwait(false);
-
-
-
-        //     var holdBufferSize = _bufferSize;
-        //     var holdBufferLength = 0;
-        //     var holdThreshold = holdBufferSize * 90 / 100;
-        //     byte[] holdBuffer = ArrayPool<byte>.Shared.Rent(holdBufferSize);
-
-        //     try
-        //     {
-        //         var token = cancellationToken.HasValue ? cancellationToken.Value : CancellationToken.None;
-        //         int bytesRead;
-        //         while ((bytesRead = await source.ReadAsync(holdBuffer, holdBufferLength, holdBufferSize - holdBufferLength, token).ConfigureAwait(false)) != 0)
-        //         {
-        //             holdBufferLength += bytesRead;
-        //             if (holdBufferLength > holdThreshold)
-        //             {
-        //                 await WriteAsync(holdBuffer, 0, holdBufferLength, token);
-        //                 holdBufferLength = 0;
-        //             }
-        //         }
-        //         if (holdBufferLength > 0)
-        //         {
-        //             await WriteAsync(holdBuffer, 0, holdBufferLength, token).ConfigureAwait(false);
-        //         }
-        //         _atEnd = true;
-        //     }
-        //     finally
-        //     {
-        //         ArrayPool<byte>.Shared.Return(holdBuffer);
-        //     }
-        // }).ConfigureAwait(false);
     }
 
     /// <summary>

@@ -36,6 +36,9 @@ async Task RedirectStream(Stream source)
 }
 ```
 
+> **Always be sure to Close or Dispose of this tream when done with it to automatically flush any buffered contents.**
+
+
 ### Working With Non-Seekable Streams - **SetAtEnd()**
 
 The **SetAtEnd()** method indicates that the source stream has been completely
@@ -137,3 +140,7 @@ What's happening?
 4. We create a task to call the ImageMagick convert utility, set to read from STDIN and write to STDOUT.  We will redirect both STDIN and STDOUT.  We will copy **teeInput** to STDIN, and copy STDOUT to **teeThumbnail**.  Importantly, we launch this as a Task but do not wait for it, yet.
 5. We then copy the request body to **teeInput**.  The task we created above will read this data from **teeInput** and, via **teeThumbnail**, save the thumbnail to a file and the response body stream
 6.  Finally, we wait for the task to complete.
+
+## Demonstration
+
+There is a project on [GitHub](https://github.com/jasonterando/TeeStreamingDemo) demonstrating how to tee stream uploads to S3.
